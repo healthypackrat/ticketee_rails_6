@@ -1,6 +1,7 @@
 class Ticket < ApplicationRecord
   belongs_to :project
   belongs_to :author, class_name: "User"
+  has_many :comments, dependent: :destroy
   has_many_attached :attachments
 
   validates :name, presence: true
