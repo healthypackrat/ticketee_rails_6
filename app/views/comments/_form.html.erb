@@ -2,7 +2,7 @@
   <h3>New Comment</h3>
 </header>
 
-<%= bootstrap_form_with model: [ticket, comment], local: true do |f| %>
+<%= bootstrap_form_with(model: [ticket, comment], local: true, label_errors: true) do |f| %>
   <%= f.text_area :text %>
   <%= f.select :state_id, @states.map { |state| [state.name, state.id] } %>
   <%= f.primary %>

@@ -1,0 +1,6 @@
+<%= bootstrap_form_with(model: [:admin, state], local: true, label_errors: true) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :color %>
+
+  <%= f.primary %>
+<% end %>
