@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_211318) do
+ActiveRecord::Schema.define(version: 2020_10_19_050029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(version: 2020_10_18_211318) do
     t.string "name"
     t.string "color"
     t.boolean "default", default: false
+  end
+
+  create_table "ticket_watchers", id: false, force: :cascade do |t|
+    t.bigint "ticket_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["ticket_id", "user_id"], name: "index_ticket_watchers_on_ticket_id_and_user_id"
+    t.index ["user_id", "ticket_id"], name: "index_ticket_watchers_on_user_id_and_ticket_id"
   end
 
   create_table "tickets", force: :cascade do |t|
