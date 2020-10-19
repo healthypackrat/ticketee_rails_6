@@ -23,7 +23,7 @@ RSpec.feature "Users can receive notifications about ticket updates" do
     expected_subject = "[Ticketee] #{project.name} - #{ticket.name}"
     expect(email.subject).to eq expected_subject
 
-    click_first_link_in_email(email)
+    click_email_link_matching(%r{/tickets/}, email)
     expect(current_path).to eq project_ticket_path(project, ticket)
   end
 
