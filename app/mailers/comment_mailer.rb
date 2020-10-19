@@ -1,8 +1,8 @@
 class CommentMailer < ApplicationMailer
   def new_comment
-    comment = params[:comment]
+    @comment = params[:comment]
     user = params[:user]
-    @ticket = comment.ticket
+    @ticket = @comment.ticket
     @project = @ticket.project
 
     subject = "[Ticketee] #{@project.name} - #{@ticket.name}"
