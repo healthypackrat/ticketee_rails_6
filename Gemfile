@@ -65,3 +65,5 @@ gem 'bootstrap_form', '~> 4.5'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
 gem 'premailer-rails', '~> 1.11', '>= 1.11.1'
+
+gem 'searcher', '~> 6.0', '>= 6.0.1'
