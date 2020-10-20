@@ -23,8 +23,16 @@
       <td><%= time_ago_in_words(@ticket.created_at) %> ago</td>
     </tr>
     <% if @ticket.state.present? %>
-      <th>State:</th>
-      <td><%= render @ticket.state %></td>
+      <tr>
+        <th>State:</th>
+        <td><%= render @ticket.state %></td>
+      </tr>
+    <% end %>
+    <% if @ticket.tags.any? %>
+      <tr>
+        <th>Tags:</th>
+        <td class="tags"><%= render @ticket.tags %></td>
+      </tr>
     <% end %>
     <tr>
       <th>Watchers:</th>

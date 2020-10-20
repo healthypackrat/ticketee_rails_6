@@ -11,6 +11,9 @@ class TicketsController < ApplicationController
     @ticket = @project.tickets.build(ticket_params)
     @ticket.author = current_user
     @ticket.attachments.attach(params[:attachments])
+    @ticket.tags = params[:tag_names].strip.split(/\s*,\s*/).map do |tag|
+      Tag.find_or_initialize_by(name: tag)
+    end
 
     if @ticket.save
       flash[:notice] = "Ticket has been created."
