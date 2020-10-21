@@ -2,6 +2,8 @@
 
 This is my walk-through of the book [Active Rails](https://leanpub.com/rails).
 
+The book version is "2020-10-06 (b5bf66cec)".
+
 ## Development
 
 ```
